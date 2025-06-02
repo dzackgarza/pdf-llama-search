@@ -1,0 +1,35 @@
+# Mathematical PDF Search Configuration
+# Copy this file to .env and fill in your values
+
+# LLM Provider (openai or gemini)
+LLM_PROVIDER=openai
+OPENAI_API_KEY=your-openai-api-key
+OPENAI_API_BASE=http://localhost:8000/v1
+
+# For Gemini (alternative)
+# LLM_PROVIDER=gemini
+# GEMINI_API_KEY=your-gemini-api-key-here
+
+# Embedding Configuration
+EMBEDDING_PROVIDER=sentence_transformers  # or "openai_compatible", "openai"
+EMBEDDING_MODEL=ultra_fast              # or "balanced", "quality"
+EMBEDDING_DEVICE=cpu                    # or "cuda", "auto"
+
+# For remote embedding APIs
+EMBEDDING_BASE_URL=http://localhost:8000/v1
+EMBEDDING_API_KEY=your-embedding-api-key
+
+# PDF Configuration
+PDF_DIR=pdfs                           # Directory containing your PDF files
+MAX_PDF_SIZE_MB=50                     # Maximum PDF file size to process
+
+# Search Configuration
+DEFAULT_TOP_K=10                       # Number of documents to retrieve
+USE_HYBRID_SEARCH=true                 # Enable BM25 + semantic search
+CHUNK_SIZE=1000                        # Text chunk size for document splitting
+CHUNK_OVERLAP=200                      # Overlap between chunks
+
+# UI Configuration
+STREAMLIT_PORT=8501
+ENABLE_DEBUG_MODE=false
+LOG_LEVEL=INFO 
